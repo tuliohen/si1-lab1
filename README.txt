@@ -1,1 +1,1 @@
-Este repositorio contém o codigo do lab1 de Si1.
+Este repositorio vai conter o codigo do lab1 de Si1.
