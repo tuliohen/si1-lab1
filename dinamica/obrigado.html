@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html ng-app = "Si1">
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Angular JS -->
+        <script src = "js/angular.min.js"></script>
+    <!-- Jquery -->
+        <script src = "js/jquery-2.1.1.min.js"></script>        
+    <!-- Controllers -->
+        <script src = "js/Controller01.js"></script>
+
+
+    <title>Obrigado!</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    
+    </head>
+
+
+    <body ng-controller="Controller01">
+      
+
+     <div class="jumbotron">
+    <div class="container">
+    <h1>Obrigado!</h1>
+    <p>por visitar o site de Sistemas de informação I.</p>
+    </div>
+    </div>
+     <br>
+     <br>
+        
+        <div class="container col-lg-3 col-lg-offset-1">
+
+                <div class="panel-heading">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3 class="section-heading col-lg-12 text-justified">Tópicos aprendidos!</h3>
+                <br>
+                <br>
+                </div>
+                <table class="table">
+                    <tbody> 
+                        <tr ng-repeat="subject in learnt track by $index">
+                            <td>{{ subject }}</td>
+                            <td>
+                                <a class="btn justified btn-info btn-warning" ng-click="moveLearnt($index)">mover</a>
+                                <a class="btn pull-right btn-danger btn-x2" ng-click="removeLearnt($index)">deletar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="col-lg-8 col-lg-offset-0">
+                                    <span class="input-group-addon">Tópico</span>
+                                    <input type="text" ng-model="learntName" class="form-control" placeholder="Digite um tópico aprendido." required>
+                                </div>
+                            </td>
+                            <td>
+                                <br>
+                                <a class="btn pull-center btn-warning" ng-click="addLearnt(learntName)">Adicionar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+        </div>
+        <div class="container col-lg-3 col-lg-offset-3">
+
+                <div class="panel-heading">
+                <br>
+                <br>
+                <br>
+                <br>
+                <h3 class="section-heading col-lg-12 text-justified">Tópicos à aprender!</h3>
+                <br>
+                <br>
+                </div>
+                <table class="table">
+                    <tbody>
+                        <tr ng-repeat="subject in toLearn track by $index">
+                            <td>{{ subject }}</td>
+                            <td>
+                                <a class="btn pull-left btn-info btn-warning" ng-click="movetoLearn($index)">mover</a>
+                                <a class="btn pull-right btn-danger btn-x2" ng-click="removetoLearn($index)">remover</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div div class="col-lg-8 col-lg-offset-0">
+                                    <span class="input-group-addon">Tópico</span>
+                                    <input type="text" ng-model="toLearnName" class="form-control" placeholder="Digite um tópico à aprender" required>
+                                </div>
+                            </td>
+                            <td>
+                                <br>
+                                <a class="btn pull-left btn-warning" ng-click="addtoLearn(toLearnName)">Adicionar</a>
+                                <br>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+         </div>
+         
+             <br>
+             <br>
+             <br>
+             <a  href="index.html" type="submit" class="btn pull-right btn-x1 col-lg-12 text-center">Voltar a página inicial</a>
+        </div>     
+    </body>
+</html>
